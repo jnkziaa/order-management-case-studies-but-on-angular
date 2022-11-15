@@ -2,12 +2,9 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  template:`
-    <app-header></app-header>
-    <app-home></app-home>
-  `,
-  styles: []
+  templateUrl: './app.component.html',
 })
 export class AppComponent {
   title = 'untitled';
+  cart: any;
 }
