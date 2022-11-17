@@ -6,6 +6,7 @@ import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
+import {ReactiveFormsModule} from "@angular/forms";
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatMenuModule} from '@angular/material/menu';
@@ -26,6 +27,10 @@ import {ProductsHeaderComponent} from './pages/home/components/products-header/p
 import {FiltersComponent} from './pages/home/components/filters/filters.component';
 import {ProductBoxComponent} from './pages/home/components/product-box/product-box.component';
 import {CartComponent} from './pages/cart/cart.component';
+import { RegisterComponent } from './register/register.component';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import {MatInputModule} from "@angular/material/input";
 
 
 @NgModule({
@@ -36,9 +41,11 @@ import {CartComponent} from './pages/cart/cart.component';
         ProductsHeaderComponent,
         FiltersComponent,
         ProductBoxComponent,
-        CartComponent
+        CartComponent,
+        RegisterComponent
     ],
     imports: [
+        ReactiveFormsModule,
         BrowserModule,
         AppRoutingModule,
         BrowserAnimationsModule,
@@ -56,6 +63,9 @@ import {CartComponent} from './pages/cart/cart.component';
         MatBadgeModule,
         MatSnackBarModule,
         RouterOutlet,
+        MatFormFieldModule,
+        MatProgressSpinnerModule,
+        MatInputModule,
     ],
     providers: [],
     bootstrap: [AppComponent]
