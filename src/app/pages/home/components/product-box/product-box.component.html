@@ -1,0 +1,21 @@
+<mat-card class="{'text-center' : !fullWidthMode}">
+	<div [ngClass]="{flex : fullWidthMode}">
+		<img class="mb-1 mx-auto h-[200px]"
+		     [ngClass]="{'h-200px': !fullWidthMode, 'h-[360px]' : fullWidthMode}"
+		src="https://images-prod.healthline.com/hlcmsresource/images/AN_images/health-benefits-of-apples-1296x728-feature.jpg"/>
+		<div class="w-full"
+			[ngClass]="{'px-8 flex flex-col justify-between' : fullWidthMode}">
+			<div>
+				<h3> Apples </h3>
+				<p class="truncate hover:whitespace-normal"> Fruit </p>
+				<p> Description </p>
+			</div>
+			<div class="flex justify-between">
+				<span class="text-red-400">{{'4.99' | currency}}</span>
+				<button>
+					<mat-icon class="text-green-500"> add_shopping_cart</mat-icon>
+				</button>
+			</div>
+		</div>
+	</div>
+</mat-card>

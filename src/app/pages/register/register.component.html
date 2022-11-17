@@ -1,0 +1,58 @@
+<div
+		class="bg-[url('https://i.pinimg.com/originals/80/ac/3e/80ac3ee1594b83b98d580e2f4cb058cf.jpg')] h-screen w-screen bg-cover flex flex-row justify-center items-center">
+	<form [formGroup]="registrationForm" (ngSubmit)="register()"
+			class="w-1/4 h-2/3 bg-gradient-to-r from-gray-400 to-gray-500 pl-3 opacity-80 rounded-lg shadow-lg flex flex-row gap-20">
+		<div class="flex flex-col">
+			<h1 class="text-white font-bold text-3xl font-unis tracking-wide justify-center whitespace-nowrap flex px-28 pt-5 text-yellow-400"> Create
+				an Account </h1>
+			<div class="pt-8 font-semibold text-gray-200 px-10 flex flex-col">
+				<label class="text-gray-300 text-sm "> USERNAME*</label>
+				<input class="pl-5 w-96 flex-1 py-2 rounded-lg border-b-2 border-gray-400 focus:border-green-400
+                      text-black placeholder-black
+                      outline-none" id="username form-control"
+				       type="text" formControlName="username" ngModel required>
+				<span *ngIf="registrationForm.get('username')?.invalid && registrationForm.get('username')?.touched" class="text-red-500"> Username is required!! </span>
+				<label class="text-gray-300 text-sm "> EMAIL*</label>
+				
+				<input class="pl-5 w-96 flex-1 py-2 rounded-lg border-b-2 border-gray-400 focus:border-green-400
+                      text-black placeholder-black
+                      outline-none" type="email" formControlName="email" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$" ngModel [email]="true">
+				<span *ngIf="registrationForm.get('email')?.invalid && registrationForm.get('email')?.touched" class="text-orange-500"> NOT A VALID EMAIL MF!! </span>
+				
+				<label class="text-gray-300 text-sm "> PASSWORD*</label>
+				<input class="pl-5 w-96 flex-1 py-2 rounded-lg border-b-2 border-gray-400 focus:border-green-400
+                      text-black placeholder-black
+                      outline-none"type="password" formControlName="password" required pattern="/^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/">
+				<span *ngIf="registrationForm.get('password')?.invalid && registrationForm.get('password')?.touched" class="text-red-500"> Password should be at least 8 characters long and should contain one number,one character and one special character. </span>
+				
+				<label class="text-gray-300 text-sm "> CONFIRM PASSWORD*</label>
+				<input class="pl-5 w-96 flex-1 py-2 rounded-lg border-b-2 border-gray-400 focus:border-green-400
+                      text-black placeholder-black
+                      outline-none" type="password" formControlName="confirmPassword">
+				
+				<label class="text-gray-300 text-sm "> CITY*</label>
+				<input class="pl-5 w-96 flex-1 py-2 rounded-lg border-b-2 border-gray-400 focus:border-green-400
+                      text-black placeholder-black
+                      outline-none" type="text" formControlName="city" required pattern="[A-Za-z]">
+				<span *ngIf="registrationForm.get('city')?.invalid && registrationForm.get('city')?.touched" class="text-yellow-300"> City is not allowed to have a number </span>
+				
+				<label class="text-gray-300 text-sm "> STATE*</label>
+				<input class="pl-5 w-96 flex-1 py-2 rounded-lg border-b-2 border-gray-400 focus:border-green-400
+                      text-black placeholder-black
+                      outline-none" type="text" formControlName="state">
+				<span *ngIf="registrationForm.get('state')?.invalid && registrationForm.get('state')?.touched" class="text-yellow-300"> State is not allowed to have a number</span>
+				
+				<mat-card-actions class="flex flex-auto justify-center pt-5">
+					<button class="py-3 pl-5 w-96 bg-green-400 rounded-lg border-b-2 border-gray-400 hover:text-teal-700 text-gray-500">
+						Register
+					</button>
+				</mat-card-actions>
+				
+			</div>
+		
+		
+		</div>
+	</form>
+
+</div>
+
